@@ -12,7 +12,15 @@ export function App () {
     return (
         <section className='App'>
             {
-                
+                users.map(({ userName, name, isFollowig }) => (
+                    <TwitterFollowCard
+                        key={userName}
+                        userName={userName}
+                        initialIsFollowing={isFollowig}
+                    >
+                        {name}
+                    </TwitterFollowCard>
+                ))
             }
         </section>
     );
